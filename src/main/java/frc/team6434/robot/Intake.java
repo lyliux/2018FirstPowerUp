@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.VictorSP;
 /**
  * Created by jwill on 1/17/2018.
  */
-public class Intake {
-
+public class Intake 
+    {
     VictorSP intakeMotor;
     DigitalInput intakeLimitSwitch;
 
@@ -16,7 +16,8 @@ public class Intake {
         intakeLimitSwitch = new DigitalInput(8);
     }
 
-    public void getCube() {
+    public void getCube()
+    {
         if (intakeLimitSwitch.get() == false) {
             intakeMotor.set(1.0);
         }
@@ -25,19 +26,22 @@ public class Intake {
         }
     }
 
-    public void ejectCubeFast() {
+    public void ejectCubeFast()
+    {
         if (intakeLimitSwitch.get() == true) {
             ejectCube(1.0);
         }
     }
 
-    public void ejectCubeSlow() {
+    public void ejectCubeSlow()
+    {
         if (intakeLimitSwitch.get() == true) {
             ejectCube(0.5);
         }
     }
 
-    private void ejectCube(double intakeSpeed) {
+    private void ejectCube(double intakeSpeed)
+    {
         intakeMotor.set(-intakeSpeed);
     }
 
